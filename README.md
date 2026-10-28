@@ -12,7 +12,10 @@ Site estático do app Juntas, publicado pelo GitHub Pages a partir da raiz da br
 
 As URLs vão para as lojas: não renomeie as pastas.
 
-HTML e CSS puros, sem build. Os tokens de `assets/site.css` vêm de `docs/design-system/tokens.css` do repositório do app; o ícone é `docs/design-system/assets/AppIcon/app-icon.svg`. As fontes Fraunces e Manrope (subconjunto latin, licença SIL OFL 1.1, em `assets/fonts/`) são servidas pelo próprio site.
+HTML e CSS puros. As páginas saem de `gerar.mjs`: edite o conteúdo lá e rode `node gerar.mjs` (Node 18 ou mais novo). O HTML gerado fica no repositório, porque é o que o Pages publica. A página `suporte/` é um redirecionamento escrito à mão.
+
+As imagens de `assets/telas/` são os celulares das peças de loja (`marketing/src/telas.mjs` do repositório do app), renderizados sem fundo e convertidos para WebP.
+
 
 Todos os links são relativos, exceto o `<base>` do `404.html`. Ao trocar para o domínio próprio, mude esse `<base>` para `/`.
 

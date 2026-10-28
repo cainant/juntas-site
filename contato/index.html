@@ -8,60 +8,86 @@
   <meta name="theme-color" content="#f9f5f1">
   <link rel="icon" href="../assets/favicon.png" type="image/png">
   <link rel="icon" href="../assets/icone.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
   <a class="pular" href="#conteudo">Pular para o conteúdo</a>
   <header class="topo">
-    <div class="wrap">
+    <div class="container topo-in">
       <a class="marca" href="../"><img src="../assets/icone.svg" alt="" width="36" height="36">Juntas</a>
       <nav aria-label="Principal">
         <ul>
-          <li><a href="../">Início</a></li>
-          <li><a href="./" aria-current="page">Suporte</a></li>
-          <li><a href="../privacidade/">Privacidade</a></li>
-          <li><a href="../termos/">Termos</a></li>
+            <li><a href="../#recursos">Recursos</a></li>
+            <li><a href="../#bia">Bia</a></li>
+            <li><a href="../#para-quem">Para quem</a></li>
+            <li><a href="../#perguntas">Perguntas</a></li>
+            <li><a href="../contato/" aria-current="page">Suporte</a></li>
         </ul>
       </nav>
+      <a class="btn btn-sm" href="../#baixar">Baixar o app</a>
     </div>
   </header>
 
-  <main id="conteudo" class="wrap">
-    <h1>Suporte</h1>
-    <p class="subtitulo">Dúvidas, problemas na conta, assinatura ou privacidade: escreva para a gente.</p>
+  <main id="conteudo">
+    <section class="doc-cabeca">
+      <div class="container">
+        <h1>Suporte</h1>
+        <p class="lead">Dúvidas, problemas na conta, assinatura ou privacidade: escreva para a gente.</p>
+      </div>
+    </section>
+    <div class="container doc">
+      <div class="cartao">
+        <h2>E-mail</h2>
+        <p><a href="mailto:ctravizanutto@gmail.com">ctravizanutto@gmail.com</a></p>
+        <p class="nota">Escreva do e-mail da sua conta e diga o seu papel (gestante, profissional ou pessoa de confiança). Nunca mande a sua senha.</p>
+      </div>
 
-    <div class="card">
-      <h2>E-mail</h2>
-      <p><a href="mailto:ctravizanutto@gmail.com">ctravizanutto@gmail.com</a></p>
-      <p class="nota">Escreva do e-mail da sua conta e diga o seu papel (gestante, profissional ou pessoa de confiança). Nunca mande a sua senha.</p>
-    </div>
+      <h2>Assinatura</h2>
+      <p>A assinatura é cobrada pela loja onde você comprou. Para cancelar ou mudar de plano:</p>
+      <ul>
+        <li><strong>iPhone:</strong> Ajustes, toque no seu nome, Assinaturas.</li>
+        <li><strong>Android:</strong> Google Play, Pagamentos e assinaturas, Assinaturas.</li>
+      </ul>
+      <p>Reembolsos também são pedidos à loja: a Apple em <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a>, o Google Play pela página de ajuda dele.</p>
 
-    <h2>Assinatura</h2>
-    <p>A assinatura é cobrada pela loja onde você comprou. Para cancelar ou mudar de plano:</p>
-    <ul>
-      <li><strong>iPhone:</strong> Ajustes, toque no seu nome, Assinaturas.</li>
-      <li><strong>Android:</strong> Google Play, Pagamentos e assinaturas, Assinaturas.</li>
-    </ul>
-    <p>Reembolsos também são pedidos à loja: a Apple em <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a>, o Google Play pela página de ajuda dele.</p>
+      <h2>Privacidade e seus dados</h2>
+      <p>Para exercer os seus direitos da LGPD, use o mesmo e-mail. Veja a <a href="../privacidade/">política de privacidade</a> e como <a href="../excluir-conta/">excluir a sua conta</a>.</p>
 
-    <h2>Privacidade e seus dados</h2>
-    <p>Para exercer os seus direitos da LGPD (acesso, correção, exclusão e os demais), use o mesmo e-mail. Veja a <a href="../privacidade/">política de privacidade</a> e como <a href="../excluir-conta/">excluir a sua conta</a>.</p>
-
-    <div class="card tint">
-      <h2>Em emergência</h2>
-      <p>O suporte não presta atendimento de saúde. Em emergência, ligue <strong>192 (SAMU)</strong> ou procure um pronto atendimento.</p>
+      <div class="cartao tint">
+        <h2>Em emergência</h2>
+        <p>O suporte não presta atendimento de saúde. Em emergência, ligue <strong>192 (SAMU)</strong> ou procure um pronto atendimento.</p>
+      </div>
     </div>
   </main>
 
   <footer class="rodape">
-    <div class="wrap">
-      <ul>
-        <li><a href="./">Suporte</a></li>
-        <li><a href="../privacidade/">Política de privacidade</a></li>
-        <li><a href="../termos/">Termos de uso</a></li>
-        <li><a href="../excluir-conta/">Excluir conta</a></li>
-      </ul>
-      <p>Juntas · <a href="mailto:ctravizanutto@gmail.com">ctravizanutto@gmail.com</a></p>
+    <div class="container">
+      <div class="rodape-in">
+        <div>
+          <a class="marca" href="../"><img src="../assets/icone.svg" alt="" width="36" height="36">Juntas</a>
+          <p>A gestante, a profissional de saúde que a acompanha e as pessoas de confiança no mesmo cuidado.</p>
+        </div>
+        <div>
+          <h2>O app</h2>
+          <ul>
+            <li><a href="../#recursos">Recursos</a></li>
+            <li><a href="../#bia">Bia</a></li>
+            <li><a href="../#para-quem">Para quem</a></li>
+            <li><a href="../#perguntas">Perguntas</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Ajuda</h2>
+          <ul>
+            <li><a href="../contato/">Suporte</a></li>
+            <li><a href="../privacidade/">Política de privacidade</a></li>
+            <li><a href="../termos/">Termos de uso</a></li>
+            <li><a href="../excluir-conta/">Excluir conta</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="base">Juntas · ctravizanutto@gmail.com · O Juntas não substitui atendimento de saúde. Em emergência, ligue 192 (SAMU).</p>
     </div>
   </footer>
 </body>

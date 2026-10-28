@@ -8,73 +8,99 @@
   <meta name="theme-color" content="#f9f5f1">
   <link rel="icon" href="../assets/favicon.png" type="image/png">
   <link rel="icon" href="../assets/icone.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
   <a class="pular" href="#conteudo">Pular para o conteúdo</a>
   <header class="topo">
-    <div class="wrap">
+    <div class="container topo-in">
       <a class="marca" href="../"><img src="../assets/icone.svg" alt="" width="36" height="36">Juntas</a>
       <nav aria-label="Principal">
         <ul>
-          <li><a href="../">Início</a></li>
-          <li><a href="../contato/">Suporte</a></li>
-          <li><a href="../privacidade/">Privacidade</a></li>
-          <li><a href="../termos/" aria-current="page">Termos</a></li>
+            <li><a href="../#recursos">Recursos</a></li>
+            <li><a href="../#bia">Bia</a></li>
+            <li><a href="../#para-quem">Para quem</a></li>
+            <li><a href="../#perguntas">Perguntas</a></li>
+            <li><a href="../contato/">Suporte</a></li>
         </ul>
       </nav>
+      <a class="btn btn-sm" href="../#baixar">Baixar o app</a>
     </div>
   </header>
 
-  <main id="conteudo" class="wrap">
-    <div class="rascunho" role="note">
-      <strong>Rascunho em revisão</strong>
-      <p>Este texto ainda está sendo revisado pelo responsável pelo Juntas e pode mudar antes da publicação do app.</p>
+  <main id="conteudo">
+    <section class="doc-cabeca">
+      <div class="container">
+      <div class="rascunho" role="note">
+        <strong>Rascunho em revisão</strong>
+        Este texto ainda está sendo revisado pelo responsável pelo Juntas e pode mudar antes da publicação do app.
+      </div>
+        <h1>Termos de uso</h1>
+        <p class="lead">Versão de 27 de outubro de 2026.</p>
+      </div>
+    </section>
+    <div class="container doc">
+      <p>Estes termos valem para o aplicativo Juntas, oferecido por [nome completo ou razão social e CPF/CNPJ do responsável]. Ao criar uma conta, você concorda com eles e com a <a href="../privacidade/">política de privacidade</a>.</p>
+
+      <div class="cartao tint">
+        <h2>O Juntas não substitui atendimento de saúde</h2>
+        <p>O Juntas é uma ferramenta de organização e comunicação. Não faz consulta, diagnóstico nem prescrição, e as informações educativas são gerais. Converse sempre com a sua profissional antes de decidir algo sobre a sua saúde. A Bia não é profissional de saúde. <strong>Em emergência, ligue 192 (SAMU) ou procure um pronto atendimento.</strong></p>
+      </div>
+
+      <h2 id="contas">1. Contas</h2>
+      <p>Cada conta tem um papel, escolhido no cadastro e que não muda:</p>
+      <ul>
+        <li><strong>Gestante:</strong> organiza a gestação e decide quem entra na rede dela e o que cada pessoa vê.</li>
+        <li><strong>Profissional:</strong> profissional de saúde que acompanha a gestante e cadastra o cuidado dela. Responde pelo que cadastra. O Juntas não confere registro profissional.</li>
+        <li><strong>Pessoa de confiança:</strong> alguém que a gestante autoriza a acompanhar e a quem ela pede ajuda.</li>
+      </ul>
+      <p>Informe dados verdadeiros e guarde a sua senha. Podemos suspender uma conta que descumpra estes termos.</p>
+
+      <h2 id="assinatura">2. Assinatura</h2>
+      <ul>
+        <li><strong>Gestante:</strong> assinatura mensal ou anual, com renovação automática.</li>
+        <li><strong>Profissional:</strong> compra única, que vale enquanto a conta existir.</li>
+        <li><strong>Pessoa de confiança:</strong> não paga.</li>
+      </ul>
+      <p>A compra é cobrada pela App Store ou pelo Google Play. A assinatura renova sozinha, pelo mesmo preço, a menos que você cancele pelo menos 24 horas antes do fim do período. Cancele na loja: no iPhone, em Ajustes, no seu nome, Assinaturas; no Android, no Google Play, em Pagamentos e assinaturas. Apagar o app não cancela. Reembolsos seguem as regras da loja e são pedidos a ela.</p>
+      <p>Para compras na App Store, valem também os <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Termos de uso padrão da Apple para apps (EULA)</a>.</p>
+
+      <h2 id="exclusao">3. Excluir a conta</h2>
+      <p>Você pode excluir a conta quando quiser, como descrito em <a href="../excluir-conta/">Excluir conta</a>. Enquanto a assinatura da gestante estiver ativa na loja, cancele-a primeiro.</p>
+
+      <h2 id="contato">4. Contato</h2>
+      <p><a href="mailto:ctravizanutto@gmail.com">ctravizanutto@gmail.com</a></p>
     </div>
-
-    <h1>Termos de uso</h1>
-    <p class="subtitulo">Versão de 27 de outubro de 2026.</p>
-    <p>Estes termos valem para o aplicativo Juntas, oferecido por [nome completo ou razão social e CPF/CNPJ do responsável]. Ao criar uma conta, você concorda com eles e com a <a href="../privacidade/">política de privacidade</a>.</p>
-
-    <div class="card tint">
-      <h2>O Juntas não substitui atendimento de saúde</h2>
-      <p>O Juntas é uma ferramenta de organização e comunicação. Não faz consulta, diagnóstico nem prescrição, e as informações educativas são gerais. Converse sempre com a sua profissional antes de decidir algo sobre a sua saúde. A Bia não é profissional de saúde. <strong>Em emergência, ligue 192 (SAMU) ou procure um pronto atendimento.</strong></p>
-    </div>
-
-    <h2 id="contas">1. Contas</h2>
-    <p>Cada conta tem um papel, escolhido no cadastro e que não muda:</p>
-    <ul>
-      <li><strong>Gestante:</strong> organiza a gestação e decide quem entra na rede dela e o que cada pessoa vê.</li>
-      <li><strong>Profissional:</strong> profissional de saúde que acompanha a gestante e cadastra o cuidado dela. Responde pelo que cadastra. O Juntas não confere registro profissional.</li>
-      <li><strong>Pessoa de confiança:</strong> alguém que a gestante autoriza a acompanhar e a quem ela pede ajuda.</li>
-    </ul>
-    <p>Informe dados verdadeiros e guarde a sua senha. Podemos suspender uma conta que descumpra estes termos.</p>
-
-    <h2 id="assinatura">2. Assinatura</h2>
-    <ul>
-      <li><strong>Gestante:</strong> assinatura mensal ou anual, com renovação automática.</li>
-      <li><strong>Profissional:</strong> compra única, que vale enquanto a conta existir.</li>
-      <li><strong>Pessoa de confiança:</strong> não paga.</li>
-    </ul>
-    <p>A compra é cobrada pela App Store ou pelo Google Play. A assinatura renova sozinha, pelo mesmo preço, a menos que você cancele pelo menos 24 horas antes do fim do período. Cancele na loja: no iPhone, em Ajustes, no seu nome, Assinaturas; no Android, no Google Play, em Pagamentos e assinaturas. Apagar o app não cancela. Reembolsos seguem as regras da loja e são pedidos a ela.</p>
-    <p>Para compras na App Store, valem também os <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Termos de uso padrão da Apple para apps (EULA)</a>.</p>
-
-    <h2 id="exclusao">3. Excluir a conta</h2>
-    <p>Você pode excluir a conta quando quiser, como descrito em <a href="../excluir-conta/">Excluir conta</a>. Enquanto a assinatura da gestante estiver ativa na loja, cancele-a primeiro.</p>
-
-    <h2 id="contato">4. Contato</h2>
-    <p><a href="mailto:ctravizanutto@gmail.com">ctravizanutto@gmail.com</a></p>
   </main>
 
   <footer class="rodape">
-    <div class="wrap">
-      <ul>
-        <li><a href="../contato/">Suporte</a></li>
-        <li><a href="../privacidade/">Política de privacidade</a></li>
-        <li><a href="../termos/">Termos de uso</a></li>
-        <li><a href="../excluir-conta/">Excluir conta</a></li>
-      </ul>
-      <p>Juntas · <a href="mailto:ctravizanutto@gmail.com">ctravizanutto@gmail.com</a></p>
+    <div class="container">
+      <div class="rodape-in">
+        <div>
+          <a class="marca" href="../"><img src="../assets/icone.svg" alt="" width="36" height="36">Juntas</a>
+          <p>A gestante, a profissional de saúde que a acompanha e as pessoas de confiança no mesmo cuidado.</p>
+        </div>
+        <div>
+          <h2>O app</h2>
+          <ul>
+            <li><a href="../#recursos">Recursos</a></li>
+            <li><a href="../#bia">Bia</a></li>
+            <li><a href="../#para-quem">Para quem</a></li>
+            <li><a href="../#perguntas">Perguntas</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Ajuda</h2>
+          <ul>
+            <li><a href="../contato/">Suporte</a></li>
+            <li><a href="../privacidade/">Política de privacidade</a></li>
+            <li><a href="../termos/">Termos de uso</a></li>
+            <li><a href="../excluir-conta/">Excluir conta</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="base">Juntas · ctravizanutto@gmail.com · O Juntas não substitui atendimento de saúde. Em emergência, ligue 192 (SAMU).</p>
     </div>
   </footer>
 </body>

@@ -8,95 +8,121 @@
   <meta name="theme-color" content="#f9f5f1">
   <link rel="icon" href="../assets/favicon.png" type="image/png">
   <link rel="icon" href="../assets/icone.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
   <a class="pular" href="#conteudo">Pular para o conteúdo</a>
   <header class="topo">
-    <div class="wrap">
+    <div class="container topo-in">
       <a class="marca" href="../"><img src="../assets/icone.svg" alt="" width="36" height="36">Juntas</a>
       <nav aria-label="Principal">
         <ul>
-          <li><a href="../">Início</a></li>
-          <li><a href="../contato/">Suporte</a></li>
-          <li><a href="../privacidade/" aria-current="page">Privacidade</a></li>
-          <li><a href="../termos/">Termos</a></li>
+            <li><a href="../#recursos">Recursos</a></li>
+            <li><a href="../#bia">Bia</a></li>
+            <li><a href="../#para-quem">Para quem</a></li>
+            <li><a href="../#perguntas">Perguntas</a></li>
+            <li><a href="../contato/">Suporte</a></li>
         </ul>
       </nav>
+      <a class="btn btn-sm" href="../#baixar">Baixar o app</a>
     </div>
   </header>
 
-  <main id="conteudo" class="wrap">
-    <div class="rascunho" role="note">
-      <strong>Rascunho em revisão</strong>
-      <p>Este texto ainda está sendo revisado pelo responsável pelo Juntas e pode mudar antes da publicação do app.</p>
+  <main id="conteudo">
+    <section class="doc-cabeca">
+      <div class="container">
+      <div class="rascunho" role="note">
+        <strong>Rascunho em revisão</strong>
+        Este texto ainda está sendo revisado pelo responsável pelo Juntas e pode mudar antes da publicação do app.
+      </div>
+        <h1>Política de privacidade</h1>
+        <p class="lead">Versão de 27 de outubro de 2026.</p>
+      </div>
+    </section>
+    <div class="container doc">
+      <p>Esta política explica como o Juntas trata os seus dados pessoais, de acordo com a Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018). Não vendemos os seus dados e não os usamos para publicidade.</p>
+
+      <h2 id="controlador">1. Quem é o controlador</h2>
+      <p>[nome completo ou razão social e CPF/CNPJ do responsável]. Contato e canal do titular: <a href="mailto:ctravizanutto@gmail.com">ctravizanutto@gmail.com</a>.</p>
+      <p>Encarregado: [definir o nome e o contato, ou a decisão de não indicar].</p>
+
+      <h2 id="dados">2. Quais dados tratamos e para quê</h2>
+      <ul>
+        <li><strong>Conta (todos os papéis):</strong> nome, e-mail, papel e senha (guardada cifrada). Se você entrar com Google ou Apple, o identificador que eles nos enviam. Para criar a conta e deixar você entrar.</li>
+        <li><strong>Gestação (gestante):</strong> nascimento, data da última menstruação, check-ins, alertas, pedidos, contrações, consultas, exames e documentos de exame, medicamentos, orientações, notas, medidas do bebê, parto e as permissões da rede. <strong>São dados de saúde, dados pessoais sensíveis.</strong> Para organizar o cuidado e mostrar à profissional e às pessoas de confiança o que a gestante autorizar.</li>
+        <li><strong>Bia (gestante, só com o opt-in):</strong> a conversa, os arquivos enviados e os fatos que a Bia guarda. Também são dados de saúde. Para conversar com a Bia. Dá para desligar quando quiser, de graça. Desligar não apaga a conta.</li>
+        <li><strong>Assinatura:</strong> plano, loja e validade. Não recebemos dados de cartão: quem cobra é a App Store ou o Google Play.</li>
+        <li><strong>Aparelho e uso técnico:</strong> identificador de notificação do aparelho, sessão, registros de acesso (como o endereço IP) e relatórios de erro com o número interno da conta. Para enviar notificações, manter você conectada e corrigir erros.</li>
+      </ul>
+
+      <h2 id="rede">3. Quem vê os seus dados no app</h2>
+      <p>A profissional vinculada vê o cuidado da gestante. Cada pessoa de confiança vê só o que a gestante liberar para ela. Ninguém da rede vê a conversa com a Bia. O vínculo só existe depois que a gestante confirma, e qualquer lado pode desfazê-lo.</p>
+
+      <h2 id="operadores">4. Empresas que tratam dados em nome do Juntas</h2>
+      <p>Contratamos empresas que só seguem as nossas instruções:</p>
+      <div class="tabela">
+        <table>
+          <thead>
+            <tr><th scope="col">Tarefa</th><th scope="col">País</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Hospedagem do servidor e do banco de dados</td><td>Brasil</td></tr>
+            <tr><td>Cópias de segurança</td><td>[confirmar o país]</td></tr>
+            <tr><td>Respostas da Bia (Google)</td><td>Brasil (São Paulo)</td></tr>
+            <tr><td>Controle das compras, e-mails da conta e entrega de notificações</td><td>Estados Unidos</td></tr>
+            <tr><td>Relatórios de erro</td><td>União Europeia</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Para saber quais empresas fazem cada tarefa, ou pedir as cláusulas contratuais usadas nas transferências para o exterior, escreva para <a href="mailto:ctravizanutto@gmail.com">ctravizanutto@gmail.com</a>.</p>
+      <p>Nas transferências para o exterior (LGPD, art. 33), enviamos só o necessário para cada tarefa. A conversa com a Bia é processada no Brasil.</p>
+
+      <h2 id="retencao">5. Por quanto tempo guardamos</h2>
+      <ul>
+        <li>Conta e dados da gestação: enquanto a conta existir.</li>
+        <li>Conversa com a Bia: 90 dias. Os fatos ficam até você apagá-los ou a conta acabar.</li>
+        <li>Conta não confirmada: sete dias.</li>
+        <li>Cópias de segurança: até 14 dias depois de um dado ser apagado.</li>
+        <li>Registros de acesso: pelo prazo que a lei exigir.</li>
+      </ul>
+
+      <h2 id="direitos">6. Seus direitos e como excluir a conta</h2>
+      <p>Pela LGPD (art. 18), você pode pedir: confirmação de que tratamos os seus dados; acesso; correção; anonimização, bloqueio ou eliminação de dados desnecessários ou tratados em desconformidade; portabilidade; eliminação dos dados tratados com o seu consentimento; informação sobre com quem compartilhamos; informação sobre poder não consentir e as consequências; e revogação do consentimento. Escreva para <a href="mailto:ctravizanutto@gmail.com">ctravizanutto@gmail.com</a> do e-mail da sua conta. Você também pode reclamar à <a href="https://www.gov.br/anpd">ANPD</a>.</p>
+      <p>Para excluir a conta, veja <a href="../excluir-conta/">Excluir conta</a>.</p>
+
+      <h2 id="mudancas">7. Mudanças</h2>
+      <p>Quando esta política mudar, a data no topo muda. Se a mudança afetar algo que você consentiu, avisamos no app antes.</p>
     </div>
-
-    <h1>Política de privacidade</h1>
-    <p class="subtitulo">Versão de 27 de outubro de 2026.</p>
-    <p>Esta política explica como o Juntas trata os seus dados pessoais, de acordo com a Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018). Não vendemos os seus dados e não os usamos para publicidade.</p>
-
-    <h2 id="controlador">1. Quem é o controlador</h2>
-    <p>[nome completo ou razão social e CPF/CNPJ do responsável]. Contato e canal do titular: <a href="mailto:ctravizanutto@gmail.com">ctravizanutto@gmail.com</a>.</p>
-    <p>Encarregado: [definir o nome e o contato, ou a decisão de não indicar].</p>
-
-    <h2 id="dados">2. Quais dados tratamos e para quê</h2>
-    <ul>
-      <li><strong>Conta (todos os papéis):</strong> nome, e-mail, papel e senha (guardada cifrada). Se você entrar com Google ou Apple, o identificador que eles nos enviam. Para criar a conta e deixar você entrar.</li>
-      <li><strong>Gestação (gestante):</strong> nascimento, data da última menstruação, check-ins, alertas, pedidos, contrações, consultas, exames e documentos de exame, medicamentos, orientações, notas, medidas do bebê, parto e as permissões da rede. <strong>São dados de saúde, dados pessoais sensíveis.</strong> Para organizar o cuidado e mostrar à profissional e às pessoas de confiança o que a gestante autorizar.</li>
-      <li><strong>Bia (gestante, só com o opt-in):</strong> a conversa, os arquivos enviados e os fatos que a Bia guarda. Também são dados de saúde. Para conversar com a Bia. Dá para desligar quando quiser, de graça. Desligar não apaga a conta.</li>
-      <li><strong>Assinatura:</strong> plano, loja e validade. Não recebemos dados de cartão: quem cobra é a App Store ou o Google Play.</li>
-      <li><strong>Aparelho e uso técnico:</strong> identificador de notificação do aparelho, sessão, registros de acesso (como o endereço IP) e relatórios de erro com o número interno da conta. Para enviar notificações, manter você conectada e corrigir erros.</li>
-    </ul>
-
-    <h2 id="rede">3. Quem vê os seus dados no app</h2>
-    <p>A profissional vinculada vê o cuidado da gestante. Cada pessoa de confiança vê só o que a gestante liberar para ela. Ninguém da rede vê a conversa com a Bia. O vínculo só existe depois que a gestante confirma, e qualquer lado pode desfazê-lo.</p>
-
-    <h2 id="operadores">4. Empresas que tratam dados em nome do Juntas</h2>
-    <p>Contratamos empresas que só seguem as nossas instruções:</p>
-    <div class="tabela">
-      <table>
-        <thead>
-          <tr><th scope="col">Tarefa</th><th scope="col">País</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Hospedagem do servidor e do banco de dados</td><td>Brasil</td></tr>
-          <tr><td>Cópias de segurança</td><td>[confirmar o país]</td></tr>
-          <tr><td>Respostas da Bia (Google)</td><td>Brasil (São Paulo)</td></tr>
-          <tr><td>Controle das compras, e-mails da conta e entrega de notificações</td><td>Estados Unidos</td></tr>
-          <tr><td>Relatórios de erro</td><td>União Europeia</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p>Para saber quais empresas fazem cada tarefa, ou pedir as cláusulas contratuais usadas nas transferências para o exterior, escreva para <a href="mailto:ctravizanutto@gmail.com">ctravizanutto@gmail.com</a>.</p>
-    <p>Nas transferências para o exterior (LGPD, art. 33), enviamos só o necessário para cada tarefa. A conversa com a Bia é processada no Brasil.</p>
-
-    <h2 id="retencao">5. Por quanto tempo guardamos</h2>
-    <ul>
-      <li>Conta e dados da gestação: enquanto a conta existir.</li>
-      <li>Conversa com a Bia: 90 dias. Os fatos ficam até você apagá-los ou a conta acabar.</li>
-      <li>Conta não confirmada: sete dias.</li>
-      <li>Cópias de segurança: até 14 dias depois de um dado ser apagado.</li>
-      <li>Registros de acesso: pelo prazo que a lei exigir.</li>
-    </ul>
-
-    <h2 id="direitos">6. Seus direitos e como excluir a conta</h2>
-    <p>Pela LGPD (art. 18), você pode pedir: confirmação de que tratamos os seus dados; acesso; correção; anonimização, bloqueio ou eliminação de dados desnecessários ou tratados em desconformidade; portabilidade; eliminação dos dados tratados com o seu consentimento; informação sobre com quem compartilhamos; informação sobre poder não consentir e as consequências; e revogação do consentimento. Escreva para <a href="mailto:ctravizanutto@gmail.com">ctravizanutto@gmail.com</a> do e-mail da sua conta. Você também pode reclamar à <a href="https://www.gov.br/anpd">ANPD</a>.</p>
-    <p>Para excluir a conta, veja <a href="../excluir-conta/">Excluir conta</a>.</p>
-
-    <h2 id="mudancas">7. Mudanças</h2>
-    <p>Quando esta política mudar, a data no topo muda. Se a mudança afetar algo que você consentiu, avisamos no app antes.</p>
   </main>
 
   <footer class="rodape">
-    <div class="wrap">
-      <ul>
-        <li><a href="../contato/">Suporte</a></li>
-        <li><a href="../privacidade/">Política de privacidade</a></li>
-        <li><a href="../termos/">Termos de uso</a></li>
-        <li><a href="../excluir-conta/">Excluir conta</a></li>
-      </ul>
-      <p>Juntas · <a href="mailto:ctravizanutto@gmail.com">ctravizanutto@gmail.com</a></p>
+    <div class="container">
+      <div class="rodape-in">
+        <div>
+          <a class="marca" href="../"><img src="../assets/icone.svg" alt="" width="36" height="36">Juntas</a>
+          <p>A gestante, a profissional de saúde que a acompanha e as pessoas de confiança no mesmo cuidado.</p>
+        </div>
+        <div>
+          <h2>O app</h2>
+          <ul>
+            <li><a href="../#recursos">Recursos</a></li>
+            <li><a href="../#bia">Bia</a></li>
+            <li><a href="../#para-quem">Para quem</a></li>
+            <li><a href="../#perguntas">Perguntas</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Ajuda</h2>
+          <ul>
+            <li><a href="../contato/">Suporte</a></li>
+            <li><a href="../privacidade/">Política de privacidade</a></li>
+            <li><a href="../termos/">Termos de uso</a></li>
+            <li><a href="../excluir-conta/">Excluir conta</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="base">Juntas · ctravizanutto@gmail.com · O Juntas não substitui atendimento de saúde. Em emergência, ligue 192 (SAMU).</p>
     </div>
   </footer>
 </body>
