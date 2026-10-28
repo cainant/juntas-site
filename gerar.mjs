@@ -1,8 +1,8 @@
 // Gera as páginas do site. Edite o conteúdo aqui e rode `node gerar.mjs`; o HTML gerado é o que o Pages publica.
 import { mkdirSync, writeFileSync } from 'node:fs';
 
-// Endereço público do site. Ao trocar para juntas.app.br, mude aqui e o <base> do 404.
-const SITE = 'https://cainant.github.io/juntas-site/';
+// Endereço público do site. Se o domínio mudar, mude aqui e o <base> do 404.
+const SITE = 'https://juntas.app.br/';
 const EMAIL = 'ctravizanutto@gmail.com';
 const PAGINAS = [];
 const mail = (assunto) =>
@@ -519,7 +519,7 @@ pagina({
 pagina({
   arquivo: '404.html',
   raiz: '',
-  base: '\n  <base href="/juntas-site/">',
+  base: '\n  <base href="/">',
   titulo: 'Página não encontrada · Juntas',
   descricao: 'Página não encontrada.',
   corpo: documento({

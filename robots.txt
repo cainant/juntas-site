@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cainant.github.io/juntas-site/sitemap.xml
+Sitemap: https://juntas.app.br/sitemap.xml

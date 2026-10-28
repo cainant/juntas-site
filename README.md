@@ -17,7 +17,7 @@ HTML e CSS puros. As páginas saem de `gerar.mjs`: edite o conteúdo lá e rode 
 As imagens de `assets/telas/` são os celulares das peças de loja (`marketing/src/telas.mjs` do repositório do app), renderizados sem fundo e convertidos para WebP.
 
 
-Os links entre páginas são relativos. Ao trocar para o domínio próprio, mude em `gerar.mjs` a constante `SITE` (usada nas tags de compartilhamento, no `sitemap.xml` e no `robots.txt`) e o `<base>` do `404.html` para `/`, e rode `node gerar.mjs`. O `robots.txt` só vale na raiz do domínio, então passa a funcionar com o domínio próprio.
+Publicado em https://juntas.app.br (domínio no registro.br: quatro registros A da raiz para os IPs do GitHub Pages e `www` CNAME para `cainant.github.io`; o arquivo `CNAME` guarda o domínio para o Pages). Os links entre páginas são relativos. Se o domínio mudar, mude a constante `SITE` em `gerar.mjs` (tags de compartilhamento, `sitemap.xml` e `robots.txt`) e rode `node gerar.mjs`.
 
 `assets/og.jpg` (1200×630) é a imagem que aparece quando alguém compartilha o link.
 
