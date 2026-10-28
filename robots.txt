@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cainant.github.io/juntas-site/sitemap.xml

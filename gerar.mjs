@@ -1,7 +1,10 @@
 // Gera as páginas do site. Edite o conteúdo aqui e rode `node gerar.mjs`; o HTML gerado é o que o Pages publica.
 import { mkdirSync, writeFileSync } from 'node:fs';
 
+// Endereço público do site. Ao trocar para juntas.app.br, mude aqui e o <base> do 404.
+const SITE = 'https://cainant.github.io/juntas-site/';
 const EMAIL = 'ctravizanutto@gmail.com';
+const PAGINAS = [];
 const mail = (assunto) =>
   `<a href="mailto:${EMAIL}${assunto ? `?subject=${encodeURIComponent(assunto)}` : ''}">${EMAIL}</a>`;
 
@@ -13,7 +16,24 @@ const NAV = [
   ['contato/', 'Suporte'],
 ];
 
-function pagina({ arquivo, raiz, titulo, descricao, atual, corpo, base = '' }) {
+function pagina({ arquivo, raiz, titulo, descricao, atual, corpo, base = '', caminho }) {
+  if (caminho !== undefined) {
+    PAGINAS.push(caminho);
+  }
+  const og =
+    caminho === undefined
+      ? '\n  <meta name="robots" content="noindex">'
+      : `
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Juntas">
+  <meta property="og:title" content="${titulo}">
+  <meta property="og:description" content="${descricao}">
+  <meta property="og:url" content="${SITE}${caminho}">
+  <meta property="og:image" content="${SITE}assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">`;
   const nav = NAV.map(
     ([href, rotulo]) =>
       `<li><a href="${raiz}${href}"${atual === href ? ' aria-current="page"' : ''}>${rotulo}</a></li>`,
@@ -25,9 +45,10 @@ function pagina({ arquivo, raiz, titulo, descricao, atual, corpo, base = '' }) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${titulo}</title>
   <meta name="description" content="${descricao}">
-  <meta name="theme-color" content="#f9f5f1">${base}
+  <meta name="theme-color" content="#f9f5f1">${base}${og}
   <link rel="icon" href="${raiz}assets/favicon.png" type="image/png">
   <link rel="icon" href="${raiz}assets/icone.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="${raiz}assets/apple-touch-icon.png">
   <link rel="preload" href="${raiz}assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="${raiz}assets/site.css">
 </head>
@@ -118,6 +139,7 @@ const icones = {
 // Início
 pagina({
   arquivo: 'index.html',
+  caminho: '',
   raiz: '',
   titulo: 'Juntas: gravidez acompanhada',
   descricao:
@@ -304,6 +326,7 @@ pagina({
 // Suporte
 pagina({
   arquivo: 'contato/index.html',
+  caminho: 'contato/',
   raiz: '../',
   titulo: 'Suporte · Juntas',
   descricao: 'Fale com o Juntas: dúvidas, problemas na conta, assinatura e privacidade.',
@@ -338,6 +361,7 @@ pagina({
 // Política de privacidade
 pagina({
   arquivo: 'privacidade/index.html',
+  caminho: 'privacidade/',
   raiz: '../',
   titulo: 'Política de privacidade · Juntas',
   descricao: 'Como o Juntas trata os seus dados pessoais, de acordo com a LGPD.',
@@ -373,14 +397,14 @@ pagina({
           <tbody>
             <tr><td>Hospedagem do servidor e do banco de dados</td><td>Brasil</td></tr>
             <tr><td>Cópias de segurança</td><td>[confirmar o país]</td></tr>
-            <tr><td>Respostas da Bia (Google)</td><td>Brasil (São Paulo)</td></tr>
+            <tr><td>Respostas da Bia</td><td>[definir o provedor e o país]</td></tr>
             <tr><td>Controle das compras, e-mails da conta e entrega de notificações</td><td>Estados Unidos</td></tr>
             <tr><td>Relatórios de erro</td><td>União Europeia</td></tr>
           </tbody>
         </table>
       </div>
       <p>Para saber quais empresas fazem cada tarefa, ou pedir as cláusulas contratuais usadas nas transferências para o exterior, escreva para ${mail()}.</p>
-      <p>Nas transferências para o exterior (LGPD, art. 33), enviamos só o necessário para cada tarefa. A conversa com a Bia é processada no Brasil.</p>
+      <p>Nas transferências para o exterior (LGPD, art. 33), enviamos só o necessário para cada tarefa.</p>
 
       <h2 id="retencao">5. Por quanto tempo guardamos</h2>
       <ul>
@@ -403,6 +427,7 @@ pagina({
 // Termos de uso
 pagina({
   arquivo: 'termos/index.html',
+  caminho: 'termos/',
   raiz: '../',
   titulo: 'Termos de uso · Juntas',
   descricao: 'As regras de uso do aplicativo Juntas, incluindo assinatura e contas por papel.',
@@ -446,6 +471,7 @@ pagina({
 // Excluir conta (exigida pelo Google Play)
 pagina({
   arquivo: 'excluir-conta/index.html',
+  caminho: 'excluir-conta/',
   raiz: '../',
   titulo: 'Excluir conta · Juntas',
   descricao: 'Como excluir a sua conta do Juntas e o que acontece com os seus dados.',
@@ -502,5 +528,19 @@ pagina({
     conteudo: `      <p><a href="./">Ir para o início</a> · <a href="contato/">Suporte</a> · <a href="privacidade/">Política de privacidade</a> · <a href="termos/">Termos de uso</a></p>`,
   }),
 });
+
+writeFileSync(
+  'sitemap.xml',
+  `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${PAGINAS.map((c) => `  <url><loc>${SITE}${c}</loc></url>`).join('\n')}
+</urlset>
+`,
+);
+writeFileSync('robots.txt', `User-agent: *
+Allow: /
+
+Sitemap: ${SITE}sitemap.xml
+`);
 
 console.log('ok');
