@@ -66,6 +66,6 @@ O workflow `.github/workflows/deploy.yml` roda em:
 - pull request: instala, testa, constrói, confere os textos e checa as URLs de `dist/`. Não publica;
 - push em `main`: o mesmo, e publica `dist/` com `actions/upload-pages-artifact` e `actions/deploy-pages`.
 
-No repositório, em Settings, Pages, a fonte precisa ser "GitHub Actions" (antes era a raiz de `main`). Domínio no registro.br: quatro registros A da raiz para os IPs do GitHub Pages e `www` CNAME para `cainant.github.io`. Se o domínio mudar, mude `site` em `astro.config.mjs`, `SITE` em `src/lib/paginas.ts` e `src/layouts/Base.astro`, e o `CNAME`.
+No repositório, em Settings, Pages, a fonte precisa ser "GitHub Actions" (antes era a raiz de `main`). O domínio está registrado no registro.br, com DNS e proxy na Cloudflare, apontando para o GitHub Pages. A Cloudflare injeta o script do Web Analytics nas páginas; em `/enxoval/` a CSP o bloqueia de propósito, então esse erro no console é esperado. Se o domínio mudar, mude `site` em `astro.config.mjs`, `SITE` em `src/lib/paginas.ts` e `src/layouts/Base.astro`, e o `CNAME`.
 
 O repositório continua público até a migração para o Cloudflare Pages (issue #3 deste repositório): o GitHub Pages só serve repositório privado em plano pago. Como a saída é estática, a troca de hospedagem não mexe no código. Por isso não coloque segredos aqui.
