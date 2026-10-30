@@ -1,0 +1,262 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/landing.css';
+
+const DESCRICAO =
+  'O Juntas reúne a gestante, a profissional de saúde que a acompanha e as pessoas de confiança ao lado dela. Em breve na App Store e no Google Play.';
+---
+
+<Base titulo="Juntas: gravidez acompanhada" descricao={DESCRICAO} caminho="">
+  <div class="landing">
+    <section class="hero" aria-labelledby="titulo-hero">
+      <div class="container hero-in">
+        <div>
+          <span class="selo">Gravidez acompanhada</span>
+          <h1 id="titulo-hero">Você não está <em>sozinha</em> nessa gravidez.</h1>
+          <p class="lead">
+            O Juntas reúne no mesmo lugar a gestante, a profissional de saúde que a acompanha e as pessoas de confiança que estão ao
+            lado dela.
+          </p>
+          <ul class="lojas" aria-label="Lojas de aplicativos">
+            <li><span class="loja"><small>Em breve na</small><strong>App Store</strong></span></li>
+            <li><span class="loja"><small>Em breve no</small><strong>Google Play</strong></span></li>
+          </ul>
+          <p class="nota">Para iPhone e Android.</p>
+        </div>
+        <div class="arco">
+          <img
+            class="frente"
+            src="/assets/telas/inicio.webp"
+            alt="Tela Início do Juntas: semanas de gestação, check-in de humor e o lembrete do medicamento"
+            width="700"
+            height="1472"
+            fetchpriority="high"
+          />
+          <img class="tras" src="/assets/telas/bia.webp" alt="Conversa com a Bia no Juntas" width="700" height="1472" />
+        </div>
+      </div>
+    </section>
+
+    <section class="container" aria-label="Compromissos">
+      <ul class="promessas">
+        <li>Sem anúncios, fórum nem loja</li>
+        <li>Você decide quem vê o quê</li>
+        <li>Cada pessoa com a sua conta</li>
+      </ul>
+    </section>
+
+    <section class="secao" id="recursos" aria-labelledby="titulo-recursos">
+      <div class="container">
+        <div class="cabeca">
+          <span class="eyebrow">Para a gestante</span>
+          <h2 id="titulo-recursos">Tudo da sua gravidez, num lugar só</h2>
+          <p>O cuidado que a sua profissional cadastra, o que você registra e as pessoas que estão com você.</p>
+        </div>
+
+        <div class="mosaico">
+          <article class="tile tile-dia">
+            <div class="texto">
+              <h3>Seu dia, num relance</h3>
+              <p>Sua idade gestacional, o lembrete do medicamento, a próxima consulta e a última orientação da sua profissional.</p>
+              <ul class="checks">
+                <li>Consultas, exames, medicamentos e orientações cadastrados pela sua profissional</li>
+                <li>Check-in de como você está se sentindo, em um toque</li>
+                <li>Contrações com duração e intervalo anotados</li>
+                <li>Linha do tempo de tudo o que aconteceu, com busca e filtros</li>
+              </ul>
+            </div>
+            <div class="peek">
+              <img src="/assets/telas/inicio.webp" alt="Tela Início do Juntas" width="700" height="1472" loading="lazy" />
+            </div>
+          </article>
+
+          <article class="tile tile-bia" id="bia">
+            <div class="texto">
+              <span class="eyebrow">Minha companheira</span>
+              <h3>Bia escuta a qualquer hora</h3>
+              <p>
+                Uma companheira de conversa só sua. Ela guarda o que você quiser que ela lembre, e você lê e apaga quando quiser.
+              </p>
+              <ul class="checks">
+                <li>Só funciona se você ativar</li>
+                <li>Dá para desligar quando quiser</li>
+              </ul>
+              <p class="aviso">A Bia não é profissional de saúde: não diagnostica, não prescreve e não avalia exames, sintomas nem fotos.</p>
+            </div>
+            <div class="peek">
+              <img src="/assets/telas/bia.webp" alt="Conversa com a Bia" width="700" height="1472" loading="lazy" />
+            </div>
+          </article>
+
+          <article class="tile tile-rede">
+            <div class="texto">
+              <span class="eyebrow">Sua rede</span>
+              <h3>Você decide quem vê o quê</h3>
+              <p>Você compartilha um código e confirma cada pessoa que entra.</p>
+              <ul class="checks">
+                <li>Para cada pessoa de confiança, escolha se ela vê suas consultas, seus lembretes e seus check-ins</li>
+                <li>Qualquer vínculo pode ser desfeito a qualquer momento</li>
+              </ul>
+            </div>
+            <div class="peek">
+              <img src="/assets/telas/rede.webp" alt="Tela Rede, com as permissões de cada pessoa de confiança" width="700" height="1472" loading="lazy" />
+            </div>
+          </article>
+
+          <article class="tile tile-ajuda">
+            <div class="texto">
+              <span class="eyebrow">Quando precisar</span>
+              <h3>Peça ajuda sem cerimônia</h3>
+              <p>
+                Envie um alerta para a sua profissional com sintomas, descrição e foto opcional, e acompanhe quando ela visualizar. Ou
+                peça uma carona, um medicamento ou um desejo a uma pessoa de confiança.
+              </p>
+              <p class="aviso">Em emergência, ligue 192 (SAMU) ou procure um pronto atendimento.</p>
+            </div>
+            <div class="peek">
+              <img src="/assets/telas/atendimento.webp" alt="Tela Preciso de atendimento" width="700" height="1472" loading="lazy" />
+              <img src="/assets/telas/preciso-de-voce.webp" alt="Tela Preciso de você" width="700" height="1472" loading="lazy" />
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="enxoval" id="enxoval" aria-labelledby="titulo-enxoval">
+      <div class="container enxoval-in">
+        <div>
+          <span class="eyebrow">Enxoval</span>
+          <h2 id="titulo-enxoval">A lista do bebê, sem ninguém baixar nada</h2>
+          <p class="lead">
+            A gestante lista o que gostaria de ganhar. Quem ela chamar escolhe um presente pelo navegador do celular ou do computador,
+            sem criar conta.
+          </p>
+          <div class="segredo">
+            <p>Ninguém vê o que ninguém escolheu. Nem ela.</p>
+            <p>
+              Cada pessoa vê só as próprias escolhas. A gestante não recebe aviso nem contagem do que foi escolhido: o enxoval é uma
+              lista de desejos, não uma lista de conferência.
+            </p>
+          </div>
+        </div>
+        <div>
+          <ol class="passos">
+            <li>
+              <h3>Ela monta a lista</h3>
+              <p>
+                No app, a gestante registra o que gostaria de ganhar, com quantidade, observação e o link da loja, e deixa um recado
+                para quem for escolher.
+              </p>
+            </li>
+            <li>
+              <h3>Ela chama as pessoas</h3>
+              <p>Pelo e-mail de cada uma ou compartilhando um link, do jeito que ela preferir.</p>
+            </li>
+            <li>
+              <h3>Quem recebe escolhe</h3>
+              <p>
+                Abre o link, confirma o e-mail com um código e escolhe os presentes. Não precisa de app nem de senha, e dá para mudar ou
+                desfazer uma escolha quando quiser.
+              </p>
+            </li>
+          </ol>
+          <p class="rodape-nota">
+            Quem foi chamado pode apagar os próprios dados quando quiser. Veja a <a href="/privacidade/#convidado">política de privacidade</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="escura" id="para-quem" aria-labelledby="titulo-quem">
+      <div class="container">
+        <div class="cabeca">
+          <span class="eyebrow">Para quem</span>
+          <h2 id="titulo-quem">Três pessoas, um mesmo cuidado</h2>
+          <p>Cada uma tem a sua conta e vê só o que precisa ver.</p>
+        </div>
+        <ul class="papeis">
+          <li class="papel">
+            <h3>Gestante</h3>
+            <p>Organiza a gravidez, monta a sua rede e conversa com a Bia.</p>
+            <span class="preco">Assinatura mensal ou anual</span>
+            <div class="peek">
+              <img src="/assets/telas/contracoes.webp" alt="Registro de contrações" width="700" height="1472" loading="lazy" />
+            </div>
+          </li>
+          <li class="papel">
+            <h3>Profissional</h3>
+            <p>Vê os alertas das suas gestantes, abre a ficha de cada uma e cadastra o cuidado.</p>
+            <span class="preco">Compra única</span>
+            <div class="peek">
+              <img src="/assets/telas/profissional.webp" alt="Tela Hoje da profissional, com os alertas" width="700" height="1472" loading="lazy" />
+            </div>
+          </li>
+          <li class="papel">
+            <h3>Pessoa de confiança</h3>
+            <p>Recebe os pedidos dela, responde e acompanha o que ela decidir compartilhar.</p>
+            <span class="preco">Gratuita</span>
+            <div class="peek">
+              <img src="/assets/telas/pessoa-de-confianca.webp" alt="Pedidos recebidos pela pessoa de confiança" width="700" height="1472" loading="lazy" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="secao" id="perguntas" aria-labelledby="titulo-perguntas">
+      <div class="container perguntas-in">
+        <div class="cabeca">
+          <span class="eyebrow">Perguntas</span>
+          <h2 id="titulo-perguntas">Perguntas frequentes</h2>
+        </div>
+        <div class="perguntas">
+          <details>
+            <summary>O Juntas substitui a minha profissional de saúde?</summary>
+            <p>Não. O Juntas é uma ferramenta de organização e comunicação. Não faz consulta, diagnóstico nem prescrição. Em emergência, ligue 192 (SAMU).</p>
+          </details>
+          <details>
+            <summary>Quanto custa?</summary>
+            <p>A gestante assina por mês ou por ano, com renovação automática. A profissional faz uma compra única. A pessoa de confiança não paga. Os preços aparecem na loja antes da compra.</p>
+          </details>
+          <details>
+            <summary>Como cancelo a assinatura?</summary>
+            <p>Na loja onde você comprou: no iPhone, em Ajustes, no seu nome, Assinaturas; no Android, no Google Play, em Pagamentos e assinaturas.</p>
+          </details>
+          <details>
+            <summary>Quem vê os meus dados?</summary>
+            <p>A profissional vinculada vê o seu cuidado. Cada pessoa de confiança vê só o que você liberar. Ninguém da sua rede vê a conversa com a Bia. Veja a <a href="/privacidade/">política de privacidade</a>.</p>
+          </details>
+          <details>
+            <summary>Preciso usar a Bia?</summary>
+            <p>Não. A Bia só funciona se você ativar, e dá para desligar quando quiser. Desligar não apaga a sua conta.</p>
+          </details>
+          <details>
+            <summary>Posso excluir a minha conta?</summary>
+            <p>Sim, quando quiser. Veja <a href="/excluir-conta/">como excluir a conta</a>.</p>
+          </details>
+          <details>
+            <summary>Fui chamado para um enxoval. Preciso baixar o app?</summary>
+            <p>Não. Você abre o link que recebeu, confirma o seu e-mail com um código e escolhe os presentes pelo navegador. Não precisa de conta nem de senha.</p>
+          </details>
+          <details>
+            <summary>A gestante vê o que eu escolhi no enxoval?</summary>
+            <p>Não. Ninguém vê o que você escolheu, nem ela, e você não vê o que os outros escolheram.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="chamada" id="baixar" aria-labelledby="titulo-baixar">
+      <div class="container">
+        <div class="chamada-in">
+          <h2 id="titulo-baixar">Em breve na App Store e no Google Play</h2>
+          <p>Dúvidas? Escreva para <a href="mailto:ctravizanutto@gmail.com">ctravizanutto@gmail.com</a>.</p>
+          <ul class="lojas" aria-label="Lojas de aplicativos">
+            <li><span class="loja"><small>Em breve na</small><strong>App Store</strong></span></li>
+            <li><span class="loja"><small>Em breve no</small><strong>Google Play</strong></span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</Base>

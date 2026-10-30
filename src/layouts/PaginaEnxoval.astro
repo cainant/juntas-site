@@ -1,0 +1,38 @@
+---
+import '../styles/enxoval.css';
+import Base from './Base.astro';
+import Enxoval from '../components/enxoval/Enxoval';
+import { API_HOMOLOGACAO, API_PRODUCAO, origemDe } from '../lib/enxoval/api';
+
+interface Props {
+  homolog?: boolean;
+}
+
+const { homolog = false } = Astro.props;
+
+// PUBLIC_API_URL troca a API nas duas páginas (desenvolvimento e teste ponta a ponta).
+const substituta = (import.meta.env.PUBLIC_API_URL as string | undefined)?.trim() || '';
+const apiUrl = substituta || (homolog ? API_HOMOLOGACAO : API_PRODUCAO);
+
+// A página só fala com a API do Juntas. As duas origens ficam liberadas nas duas páginas;
+// o script de hidratação da ilha entra no script-src por hash (Astro gera).
+const origens = [...new Set([origemDe(API_PRODUCAO), origemDe(API_HOMOLOGACAO), substituta ? origemDe(substituta) : ''].filter(Boolean))];
+Astro.csp?.insertDirective(`connect-src ${origens.join(' ')}`);
+---
+
+<Base
+  titulo={homolog ? 'Enxoval (homologação) · Juntas' : 'Enxoval · Juntas'}
+  descricao="Escolha presentes do enxoval de quem chamou você."
+  minimo
+  semReferrer
+>
+  <div slot="cabeca" class="cabeca-enxoval">
+    {homolog && <span class="tag-homolog">homologação</span>}
+  </div>
+  <div class="container enx-container">
+    <Enxoval client:load apiUrl={apiUrl} ambiente={homolog ? 'homolog' : 'producao'} />
+    <noscript>
+      <p class="sem-js">Para escolher presentes, este endereço precisa de JavaScript ligado no navegador.</p>
+    </noscript>
+  </div>
+</Base>

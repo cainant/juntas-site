@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import Documento from '../layouts/Documento.astro';
+---
+
+<Base
+  titulo="Suporte · Juntas"
+  descricao="Fale com o Juntas: dúvidas, problemas na conta, assinatura e privacidade."
+  caminho="contato/" atual="contato"
+>
+  <Documento titulo="Suporte" lead="Dúvidas, problemas na conta, assinatura ou privacidade: escreva para a gente.">
+      <div class="cartao">
+        <h2>E-mail</h2>
+        <p><a href="mailto:ctravizanutto@gmail.com">ctravizanutto@gmail.com</a></p>
+        <p class="nota">Escreva do e-mail da sua conta e diga o seu papel (gestante, profissional ou pessoa de confiança). Nunca mande a sua senha.</p>
+      </div>
+
+      <h2>Assinatura</h2>
+      <p>A assinatura é cobrada pela loja onde você comprou. Para cancelar ou mudar de plano:</p>
+      <ul>
+        <li><strong>iPhone:</strong> Ajustes, toque no seu nome, Assinaturas.</li>
+        <li><strong>Android:</strong> Google Play, Pagamentos e assinaturas, Assinaturas.</li>
+      </ul>
+      <p>Reembolsos também são pedidos à loja: a Apple em <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a>, o Google Play pela página de ajuda dele.</p>
+
+      <h2>Privacidade e seus dados</h2>
+      <p>Para exercer os seus direitos da LGPD, use o mesmo e-mail. Veja a <a href="/privacidade/">política de privacidade</a> e como <a href="/excluir-conta/">excluir a sua conta</a>.</p>
+
+      <div class="cartao tint">
+        <h2>Em emergência</h2>
+        <p>O suporte não presta atendimento de saúde. Em emergência, ligue <strong>192 (SAMU)</strong> ou procure um pronto atendimento.</p>
+      </div>
+  </Documento>
+</Base>
