@@ -1,0 +1,79 @@
+name: Site
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+env:
+  # O mínimo do Astro 7 é 22.23.4 (engines em package.json), que hoje é a última 22.x.
+  NODE_VERSION: 22.23.4
+
+jobs:
+  verificar:
+    name: Construir e conferir
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # conferir-textos.mjs lê o HTML antigo de origin/main.
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Tipos
+        run: pnpm check
+
+      - name: Testes
+        run: pnpm test
+
+      - name: Construir
+        run: pnpm build
+
+      - name: Texto das páginas legais
+        run: node scripts/conferir-textos.mjs --ref origin/main
+
+      - name: Conferir as URLs de dist/
+        run: |
+          for f in index.html contato/index.html suporte/index.html privacidade/index.html termos/index.html excluir-conta/index.html \
+                   404.html robots.txt sitemap.xml CNAME enxoval/index.html enxoval/homolog/index.html assets/og.jpg assets/icone.svg; do
+            test -s "dist/$f" || { echo "faltando: dist/$f"; exit 1; }
+          done
+          if grep -q "enxoval" dist/sitemap.xml; then echo "o enxoval não pode entrar no sitemap"; exit 1; fi
+          grep -q "Disallow: /enxoval/" dist/robots.txt
+          if grep -q "<script" dist/index.html dist/privacidade/index.html; then echo "página de conteúdo com script"; exit 1; fi
+
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
+        with:
+          path: dist
+
+  publicar:
+    name: Publicar no GitHub Pages
+    if: github.event_name != 'pull_request'
+    needs: verificar
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
